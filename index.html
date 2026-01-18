@@ -10,7 +10,7 @@
     <style>
         body { font-family: 'Inter', sans-serif; }
         .hero-gradient {
-            background: radial-gradient(circle at top right, #e0e7ff 0%, #ffffff 50%);
+            background: radial-gradient(circle at top right, #e0e7ff 0%, #dad7d7 50%);
         }
     </style>
 </head>
@@ -26,7 +26,7 @@
                     <span class="text-xl font-bold tracking-tight text-indigo-900">CampusOS</span>
                 </div>
                 <div class="hidden md:flex space-x-8 font-medium text-slate-600">
-                    <a href="#" class="hover:text-indigo-600 transition">Features</a>
+                    <a href="#" class="hover:text-indigo-600 transition" id="features-button">Features</a>
                     <a href="faculty_dashboard.html" class="hover:text-indigo-600 transition">For Faculty</a>
                     <a href="#" class="hover:text-indigo-600 transition" id="about-button">About</a>
                 </div>
@@ -52,6 +52,7 @@
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <button class="bg-slate-900 text-white px-8 py-4 rounded-xl font-bold hover:bg-slate-800 transition">
+                    <!-- <a href="login.html"></a> -->
                     Get Started Free
                 </button>
                 <button class="bg-white border border-slate-200 px-8 py-4 rounded-xl font-bold hover:bg-slate-50 transition">
@@ -61,7 +62,7 @@
         </div>
     </header>
 
-    <section class="py-24 bg-white">
+    <section class="py-24 bg-white" id="features">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl font-bold text-slate-900">Built for the Modern Student</h2>

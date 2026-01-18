@@ -1,8 +1,15 @@
-about_button = document.getElementById("about-button").addEventListener("click", scroll);
-function scroll(){
+document.getElementById("about-button").addEventListener("click", scroll_about);
+function scroll_about(){
     document.getElementById("about").scrollIntoView(
         {behavior:"smooth",
         block:"start"}
     );
 }
-console.log("Hello");
+document.getElementById("features-button").addEventListener("click", scroll_feature);
+function scroll_feature(){
+    document.getElementById("features").scrollIntoView(
+        {behavior: "smooth",
+        block: "start"
+        }
+    );
+}
