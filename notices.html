@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notices | CampusOS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-slate-50">
+    <div class="max-w-3xl mx-auto px-4 py-8">
+        <div class="flex justify-between items-center mb-8">
+            <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight">Notice Board</h1>
+        </div>
+
+        <div class="flex gap-4 mb-8 overflow-x-auto pb-2">
+            <button class="px-4 py-2 bg-indigo-600 text-white rounded-full text-sm font-semibold whitespace-nowrap">All Notices</button>
+            <button class="px-4 py-2 bg-white border border-slate-200 text-slate-600 rounded-full text-sm font-semibold whitespace-nowrap">Academic</button>
+            <button class="px-4 py-2 bg-white border border-slate-200 text-slate-600 rounded-full text-sm font-semibold whitespace-nowrap">Events</button>
+            <button class="px-4 py-2 bg-white border border-slate-200 text-slate-600 rounded-full text-sm font-semibold whitespace-nowrap">Exams</button>
+        </div>
+
+        <div class="space-y-6">
+            <article class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 bg-slate-100 rounded-full"></div>
+                    <div>
+                        <p class="font-bold text-slate-900">Prof. Sarah Miller</p>
+                        <p class="text-xs text-slate-500">Dept. of Computer Science • 10:30 AM</p>
+                    </div>
+                    <span class="ml-auto bg-indigo-100 text-indigo-700 text-[10px] font-bold px-2 py-1 rounded uppercase">Academic</span>
+                </div>
+                <h2 class="text-xl font-bold text-slate-900 mb-2">CS301 Lab Rescheduled</h2>
+                <p class="text-slate-600 leading-relaxed mb-4">
+                    The Afternoon session for CS301 (Data Structures) lab has been moved from Lab 4 to the Seminar Hall due to maintenance.
+                </p>
+                <div class="pt-4 border-t border-slate-50 flex gap-4">
+                    <button class="text-sm font-bold text-indigo-600">Acknowledge</button>
+                    <button class="text-sm font-bold text-slate-400">Save for Later</button>
+                </div>
+            </article>
+
+            <article class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 bg-slate-100 rounded-full"></div>
+                    <div>
+                        <p class="font-bold text-slate-900">Campus Events Team</p>
+                        <p class="text-xs text-slate-500">Admin Block • Yesterday</p>
+                    </div>
+                    <span class="ml-auto bg-emerald-100 text-emerald-700 text-[10px] font-bold px-2 py-1 rounded uppercase">Events</span>
+                </div>
+                <h2 class="text-xl font-bold text-slate-900 mb-2">Annual Sports Meet 2024</h2>
+                <div class="w-full h-48 bg-slate-200 rounded-xl mb-4 overflow-hidden flex items-center justify-center text-slate-400">
+                    [Event Poster Placeholder]
+                </div>
+                <p class="text-slate-600 mb-4">Registration for individual and team sports is now open on the portal.</p>
+                <button class="w-full bg-slate-50 text-slate-900 font-bold py-3 rounded-xl border border-slate-100 hover:bg-slate-100 transition">
+                    Register Now
+                </button>
+            </article>
+        </div>
+    </div>
+</body>
+</html>
