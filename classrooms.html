@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Finder | CampusOS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>body { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="bg-slate-50 min-h-screen">
+
+    <nav class="bg-white border-b border-slate-200 py-4 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center font-bold text-white">C</div>
+                <span class="text-xl font-bold text-slate-900 tracking-tight">Campus<span class="text-indigo-600">OS</span></span>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="text-sm font-medium text-slate-500">Jan 18, 2026 | 11:00 AM</span>
+                <a href="faculty_dashboard.html" class="bg-slate-100 px-4 py-2 rounded-lg text-sm font-bold text-slate-700 hover:bg-slate-200 transition">Back</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 py-10">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+            <div>
+                <h1 class="text-3xl font-bold text-slate-900">Classroom Availability</h1>
+                <p class="text-slate-500 mt-1">Find and book empty spaces for extra classes or meetings.</p>
+            </div>
+            
+            <div class="flex flex-wrap gap-3">
+                <select class="px-4 py-2 rounded-xl border border-slate-200 bg-white text-sm font-semibold outline-none focus:ring-2 focus:ring-indigo-500">
+                    <option>LP</option>
+                    <option>LT</option>
+                    <option>B Block</option>
+                    <option>TAN</option>
+                    <option>H Block</option>
+                    <option>CSED</option>
+                    <option>Main Auditorium</option>
+                </select>
+                <select class="px-4 py-2 rounded-xl border border-slate-200 bg-white text-sm font-semibold outline-none focus:ring-2 focus:ring-indigo-500">
+                    <option>Floor 1</option>
+                    <option>Floor 2</option>
+                    <option>Floor 3</option>
+                </select>
+                <button class="bg-indigo-600 text-white px-6 py-2 rounded-xl font-bold text-sm hover:bg-indigo-700 transition">
+                    Refresh Live Status
+                </button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <div class="bg-white rounded-3xl border border-slate-200 p-6 hover:shadow-xl hover:shadow-slate-200/50 transition duration-300">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">LP101</h3>
+                        <p class="text-sm text-slate-500">Capacity: 160 Students</p>
+                    </div>
+                    <span class="bg-emerald-100 text-emerald-700 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Available Now</span>
+                </div>
+                
+                <div class="space-y-3 mb-6">
+                    <div class="flex justify-between text-sm">
+                        <span class="text-slate-400">Current Session</span>
+                        <span class="font-semibold text-slate-700">None</span>
+                    </div>
+                    <div class="flex justify-between text-sm">
+                        <span class="text-slate-400">Next Booking</span>
+                        <span class="font-semibold text-indigo-600">02:00 PM (Seminar)</span>
+                    </div>
+                </div>
+
+                <button class="w-full py-3 bg-slate-900 text-white rounded-xl font-bold text-sm hover:bg-slate-800 transition">
+                    Book for Extra Class
+                </button>
+            </div>
+
+            <div class="bg-white rounded-3xl border border-slate-200 p-6 opacity-80 border-l-4 border-l-red-500">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">L008 (Lab)</h3>
+                        <p class="text-sm text-slate-500">Capacity: 30 Systems</p>
+                    </div>
+                    <span class="bg-red-100 text-red-700 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Occupied</span>
+                </div>
+                
+                <div class="space-y-3 mb-6">
+                    <div class="flex justify-between text-sm">
+                        <span class="text-slate-400">Current Session</span>
+                        <span class="font-semibold text-slate-700">CS Data Structures</span>
+                    </div>
+                    <div class="flex justify-between text-sm">
+                        <span class="text-slate-400">Ends at</span>
+                        <span class="font-semibold text-slate-700">12:30 PM</span>
+                    </div>
+                </div>
+
+                <button disabled class="w-full py-3 bg-slate-100 text-slate-400 rounded-xl font-bold text-sm cursor-not-allowed">
+                    Currently in Use
+                </button>
+            </div>
+
+            <div class="bg-white rounded-3xl border border-slate-200 p-6 hover:shadow-xl hover:shadow-slate-200/50 transition duration-300">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">LP 103</h3>
+                        <p class="text-sm text-slate-500">Capacity: 125 Students</p>
+                    </div>
+                    <span class="bg-emerald-100 text-emerald-700 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Available Now</span>
+                </div>
+                
+                <div class="space-y-3 mb-6">
+                    <div class="flex justify-between text-sm">
+                        <span class="text-slate-400">Current Session</span>
+                        <span class="font-semibold text-slate-700">None</span>
+                    </div>
+                    <div class="flex justify-between text-sm">
+                        <span class="text-slate-400">Next Booking</span>
+                        <span class="font-semibold text-indigo-600">Free all day</span>
+                    </div>
+                </div>
+
+                <button class="w-full py-3 bg-slate-900 text-white rounded-xl font-bold text-sm hover:bg-slate-800 transition">
+                    Book for Extra Class
+                </button>
+            </div>
+
+            <div class="bg-white rounded-3xl border border-slate-200 p-6 opacity-80 border-l-4 border-l-red-500">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">Conference Room</h3>
+                        <p class="text-sm text-slate-500">Capacity: 15 People</p>
+                    </div>
+                    <span class="bg-red-100 text-red-700 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Occupied</span>
+                </div>
+                
+                <div class="space-y-3 mb-6">
+                    <div class="flex justify-between text-sm">
+                        <span class="text-slate-400">Current Session</span>
+                        <span class="font-semibold text-slate-700">Faculty Meeting</span>
+                    </div>
+                    <div class="flex justify-between text-sm">
+                        <span class="text-slate-400">Ends at</span>
+                        <span class="font-semibold text-slate-700">01:00 PM</span>
+                    </div>
+                </div>
+
+                <button disabled class="w-full py-3 bg-slate-100 text-slate-400 rounded-xl font-bold text-sm cursor-not-allowed">
+                    Currently in Use
+                </button>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="py-12 text-center text-slate-400 text-sm">
+        &copy; 2026 CampusOS Real-time Resource Monitor
+    </footer>
+
+</body>
+</html>
