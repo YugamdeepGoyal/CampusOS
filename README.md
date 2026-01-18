@@ -42,4 +42,4 @@ Since this is a frontend-only hackathon project, you can run it locally without 
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/yourusername/CampusOS.git](https://github.com/yourusername/CampusOS.git)
+   git clone [https://github.com/YugamdeepGoyal/CampusOS.git]
