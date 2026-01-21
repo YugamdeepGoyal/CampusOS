@@ -36,10 +36,6 @@ College students face "Information Overload." **CampusOS** segments data so that
 
 
 
-
-
----
-
 ## 🧰 Tech Stack
 
 - **Backend:** Python, Flask  
