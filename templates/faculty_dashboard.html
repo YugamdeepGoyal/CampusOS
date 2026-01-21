@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Dashboard | CampusOS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass-header { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid #e2e8f0; }
+    </style>
+</head>
+<body class="bg-slate-50 flex h-screen overflow-hidden">
+
+    <aside class="w-64 bg-white border-r border-slate-200 hidden md:flex flex-col flex-shrink-0">
+        <div class="p-6">
+            <div class="flex items-center gap-2 mb-10">
+                <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center font-bold text-white">C</div>
+                <span class="text-xl font-bold text-slate-900 tracking-tight">Campus<span class="text-indigo-600">OS</span></span>
+            </div>
+            <nav class="space-y-1">
+                <a href="{{ url_for('faculty_dashboard') }}" class="flex items-center gap-3 px-4 py-3 bg-indigo-50 text-indigo-700 rounded-xl font-bold transition">
+                    Dashboard
+                </a>
+                <a href="{{ url_for('post_notice') }}" class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-50 rounded-xl transition font-medium">
+                    Create Notice
+                </a>
+                <a href="{{ url_for('myclasses') }}" class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-50 rounded-xl transition font-medium">
+                    My Classes
+                </a>
+                <a href="{{ url_for('classrooms') }}" class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-50 rounded-xl transition font-medium">
+                    Book Room
+                </a>
+            </nav>
+        </div>
+    </aside>
+
+    <main class="flex-1 flex flex-col min-w-0 overflow-hidden">
+        
+        <header class="glass-header h-20 px-8 flex items-center justify-between z-20 flex-shrink-0">
+            <div class="flex flex-col">
+                <h1 class="text-xl font-bold text-slate-900">Faculty Overview</h1>
+                <p class="text-[10px] text-slate-500 font-bold uppercase tracking-widest">Patiala Campus • 2026</p>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="bg-emerald-50 text-emerald-600 text-[10px] font-extrabold px-3 py-1 rounded-full border border-emerald-100 uppercase tracking-tight">Active Session</span>
+                <div class="h-8 w-[1px] bg-slate-200 mx-2"></div>
+                <div class="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 font-bold border-2 border-white shadow-sm">SM</div>
+            </div>
+        </header>
+
+        <div class="flex-1 overflow-y-auto p-8">
+            <div class="max-w-7xl mx-auto">
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+                    <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                        <p class="text-slate-400 text-[10px] font-bold uppercase tracking-widest">Total Notices</p>
+                        <h3 class="text-3xl font-bold mt-2 text-slate-900">12</h3>
+                    </div>
+                    <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                        <p class="text-slate-400 text-[10px] font-bold uppercase tracking-widest">Avg. Engagement</p>
+                        <h3 class="text-3xl font-bold mt-2 text-indigo-600">92%</h3>
+                    </div>
+                    <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                        <p class="text-slate-400 text-[10px] font-bold uppercase tracking-widest">Assignments</p>
+                        <h3 class="text-3xl font-bold mt-2 text-slate-900">08</h3>
+                    </div>
+                    <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow border-l-4 border-l-amber-400">
+                        <p class="text-slate-400 text-[10px] font-bold uppercase tracking-widest">Pending Approvals</p>
+                        <h3 class="text-3xl font-bold mt-2 text-amber-500">03</h3>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-[2rem] border border-slate-200 shadow-xl shadow-slate-200/40 overflow-hidden">
+                    <div class="p-8 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
+                        <div>
+                            <h2 class="font-bold text-slate-900 text-lg">Active Announcements</h2>
+                            <p class="text-sm text-slate-500">Recent posts and their campus reach</p>
+                        </div>
+                        <a href="{{ url_for('post_notice') }}" class="bg-indigo-600 text-white px-6 py-2.5 rounded-xl text-sm font-bold shadow-lg shadow-indigo-100 hover:bg-indigo-700 transition transform active:scale-95">
+                            + New Post
+                        </a>
+                    </div>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-white">
+                                    <th class="px-8 py-5 text-[10px] font-bold text-slate-400 uppercase tracking-widest">Announcement Title</th>
+                                    <th class="px-8 py-5 text-[10px] font-bold text-slate-400 uppercase tracking-widest">Category</th>
+                                    <th class="px-8 py-5 text-[10px] font-bold text-slate-400 uppercase tracking-widest">Target Reach</th>
+                                    <th class="px-8 py-5 text-[10px] font-bold text-slate-400 uppercase tracking-widest">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-100">
+                                <tr class="hover:bg-slate-50/50 transition-colors">
+                                    <td class="px-8 py-5">
+                                        <p class="font-bold text-slate-800">Final Exam Guidelines PDF</p>
+                                        <p class="text-[10px] text-slate-400 font-medium">Posted 2 hours ago</p>
+                                    </td>
+                                    <td class="px-8 py-5">
+                                        <span class="px-3 py-1 bg-blue-50 text-blue-600 text-[10px] font-extrabold rounded-lg border border-blue-100">ACADEMIC</span>
+                                    </td>
+                                    <td class="px-8 py-5 text-sm font-semibold text-slate-600">450 Students</td>
+                                    <td class="px-8 py-5">
+                                        <div class="flex items-center gap-2">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                                            <span class="text-emerald-600 font-bold text-xs">Published</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-slate-50/50 transition-colors">
+                                    <td class="px-8 py-5">
+                                        <p class="font-bold text-slate-800">Lab Session Time Change</p>
+                                        <p class="text-[10px] text-slate-400 font-medium">Posted Yesterday</p>
+                                    </td>
+                                    <td class="px-8 py-5">
+                                        <span class="px-3 py-1 bg-amber-50 text-amber-600 text-[10px] font-extrabold rounded-lg border border-amber-100">URGENT</span>
+                                    </td>
+                                    <td class="px-8 py-5 text-sm font-semibold text-slate-600">42 Students</td>
+                                    <td class="px-8 py-5">
+                                        <div class="flex items-center gap-2">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                                            <span class="text-emerald-600 font-bold text-xs">Published</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <footer class="py-12 text-center text-slate-400 text-xs font-bold uppercase tracking-widest">
+                    CampusOS Management System &copy; 2026
+                </footer>
+
+            </div>
+        </div>
+    </main>
+</body>
+</html>
