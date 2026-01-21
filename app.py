@@ -23,40 +23,21 @@ def home():
 
 
 # login
-# @app.route("/login.html", methods=["GET", "POST"])
-# def login():
-#     if request.method == "POST":
-#         username = request.form.get("username")
-#         password = request.form.get("password")
-#         with engine.connect() as conn:
-#             stmt = select(data)
-#             result = conn.execute(stmt)
-#             all_rows = result.fetchall()
-#             for row in all_rows:
-#                 if row.email == username and row.password == password and row.member_type == "student":
-#                     return redirect(url_for("dashboard"))
-#         # if username
-#     return render_template("login.html")
 @app.route("/login.html", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
         username = request.form.get("username")
         password = request.form.get("password")
-
         with engine.connect() as conn:
-            stmt = select(data).where(
-                data.c.email == username,
-                data.c.password == password,
-                data.c.member_type == "student"
-            )
-
-            user = conn.execute(stmt).fetchone()
-
-            if user:
-                return redirect(url_for("dashboard"))
-
-        return "Invalid email or password"
-
+            stmt = select(data)
+            result = conn.execute(stmt)
+            all_rows = result.fetchall()
+            for row in all_rows:
+                if row.email == username and row.password == password and row.member_type == "student":
+                    return redirect(url_for("dashboard"))
+                else:
+                    return "INVALID"
+        # if username
     return render_template("login.html")
 
 
