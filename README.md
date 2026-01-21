@@ -45,7 +45,7 @@ To view specific pages, start the Flask server and enter these URLs:
 | **My Classes** | `/myclasses` | Faculty schedule & attendance |
 | **Book Room** | `/classrooms` | Room availability finder |
 | **Student Dashboard** | `/dashboard` | Student-side overview |
-| **Login Pages** | `/login` / `/faculty_login` | Authentication portals |
+| **Login Pages** | `/login` | Authentication portals |
 
 **Folder Directory:**
 ```text
