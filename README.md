@@ -34,7 +34,7 @@ College students face "Information Overload." **CampusOS** segments data so that
 ---
 
 ## 📂 Project Structure & Navigation
-#### The project is in development phase so you need to enter the url to visit the pages. Also every content on the website is completelty fake.
+#### The project is in development phase so you need to enter the url to visit the pages. Also every content on the website is completely fake.
 To view specific pages, start the Flask server and enter these URLs:
 
 | Page Name | Flask Route (URL) | Description |
