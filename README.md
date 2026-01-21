@@ -54,8 +54,7 @@ CampusOS/
 ├── login_credentials.db     # SQLAlchemy Database
 ├── src/
 │   └── js/script.js        # Frontend interactions
-└── templates/              # Jinja2 HTML Templates
-    ├── layout.html         # Base Sidebar/Header (Inherited)
+└── templates/              # Jinja2 HTML Templates  
     ├── index.html          
     ├── faculty_dashboard.html
     ├── post_notice.html
