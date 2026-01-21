@@ -1,45 +1,63 @@
-# 🎓 CampusOS
+# 🎓 CampusOS 
 > **The centralized operating system for university communication.**
 
-CampusOS is a modern, unified web platform designed to eliminate the fragmentation of college communication. No more digging through WhatsApp groups or missing crucial emails—CampusOS brings faculty and students together in one seamless, professional interface.
+CampusOS is a modern, unified web platform designed to eliminate the fragmentation of college communication. It replaces messy WhatsApp groups and buried emails with a single, role-based "Source of Truth."
 
 ---
 
-## 🚀 Vision
-College students often face "Information Overload." Between department notices, exam schedules, and club events, important data gets lost. **CampusOS** provides a single source of truth with role-based access to ensure the right information reaches the right person at the right time.
+## 🏗️ Project Status: UNDER CONSTRUCTION
+This project is currently being developed for a hackathon. 
+> [!IMPORTANT]
+> Some interactive elements (buttons/links) are currently placeholders. To view the UI, you must run the Flask server and navigate to the routes manually.
+
+---
+
+## 🚀 The Vision
+College students face "Information Overload." **CampusOS** segments data so that a 1st-year Mechanical student doesn't get notifications meant for a 4th-year CS student. 
+
+
+
+---
 
 ## ✨ Key Features
 
 ### 👤 For Students
-- **Personalized Dashboard:** A high-level overview of attendance, GPA, and pending tasks.
-- **Smart Notice Feed:** Filterable announcements categorized by Academics, Events, and Exams.
-- **Targeted Updates:** Only see notices relevant to your Year, Branch, and Department.
+- **Personalized Feed:** View notices filtered by your Year, Branch, and Department.
+- **Academic Dashboard:** Quick access to schedule and attendance.
+- **Smart Notices:** Categorized by Academics, Events, and Exams.
 
 ### 🏛️ For Faculty & Admin
-- **Unified Post Portal:** Create and broadcast notices with precision targeting.
-- **Audience Segmentation:** Filter recipients by Department, Specialization, and Batch.
-- **Urgent Broadcasts:** Mark critical notices to ensure they stand out in the student feed.
+- **Precision Targeting:** Post notices to specific batches or the entire campus.
+- **Classroom Booking:** Real-time room availability and reservation system.
+- **Attendance Hub:** Manage daily lectures and student presence.
 
-## 🛠️ Tech Stack
+---
 
-- **Frontend:** HTML5, CSS3
-- **Styling:** [Tailwind CSS](https://tailwindcss.com/) (Modern Utility-first CSS), [Bootstrap 5](https://getbootstrap.com/) (Components)
-- **Typography:** [Inter](https://fonts.google.com/specimen/Inter) (Google Fonts)
-- **Icons:** SVG-based iconography for a clean, professional look.
+## 📂 Project Structure & Navigation
+#### The project is in development phase so you need to enter the url to visit the pages. Also every content on the website is completelty fake.
+To view specific pages, start the Flask server and enter these URLs:
 
-## 📸 Screen Previews
+| Page Name | Flask Route (URL) | Description |
+| :--- | :--- | :--- |
+| **Landing Page** | `/` | Hero section & Project Overview |
+| **Faculty Dashboard** | `/faculty_dashboard` | Overview of notices & engagement |
+| **Post Notice** | `/post_notice` | Targeting & Announcement creator |
+| **My Classes** | `/myclasses` | Faculty schedule & attendance |
+| **Book Room** | `/classrooms` | Room availability finder |
+| **Student Dashboard** | `/dashboard` | Student-side overview |
+| **Login Pages** | `/login` / `/faculty_login` | Authentication portals |
 
-| Page | Description |
-| --- | --- |
-| **Landing Page** | High-conversion hero section with glassmorphism effects. |
-| **Unified Login** | Role-based entry for both Students and Faculty. |
-| **Student Dashboard** | Clean, widget-based overview of academic life. |
-| **Faculty Portal** | Specialized form for precision notice targeting. |
-
-## 🏁 Getting Started
-
-Since this is a frontend-only hackathon project, you can run it locally without any backend setup.
-
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/YugamdeepGoyal/CampusOS.git]
+**Folder Directory:**
+```text
+CampusOS/
+├── app.py                  # Flask Logic & SQLite Configuration
+├── login_credentials.db     # SQLAlchemy Database
+├── src/
+│   └── js/script.js        # Frontend interactions
+└── templates/              # Jinja2 HTML Templates
+    ├── layout.html         # Base Sidebar/Header (Inherited)
+    ├── index.html          
+    ├── faculty_dashboard.html
+    ├── post_notice.html
+    ├── myclasses.html
+    └── ... (other html files)
