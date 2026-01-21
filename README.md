@@ -1,6 +1,7 @@
 # 🎓 CampusOS 
 > **The centralized operating system for university communication.**
 
+
 CampusOS is a modern, unified web platform designed to eliminate the fragmentation of college communication. It replaces messy WhatsApp groups and buried emails with a single, role-based "Source of Truth."
 
 ---
@@ -60,3 +61,8 @@ CampusOS/
     ├── post_notice.html
     ├── myclasses.html
     └── ... (other html files)
+```
+USE:<br>
+email: abcd_1@gmail.com<br>
+password: abcd_1_1<br>
+For Sample Login
