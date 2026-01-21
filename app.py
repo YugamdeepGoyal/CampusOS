@@ -1,6 +1,19 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
+from sqlalchemy import create_engine, MetaData, Table, select, Integer, String, Column
 
 app = Flask(__name__)
+engine = create_engine("sqlite:///CampusOSdb.db")
+meta = MetaData()
+data = Table(
+    "users_data",
+    meta,
+    Column("id", Integer, primary_key=True),
+    Column("name", String, nullable=False),
+    Column("email", String, nullable=False),
+    Column("password", String, nullable=False),
+    Column("member_type", String, default="student", nullable=False),
+)
+meta.create_all(engine)
 
 
 # home
@@ -10,10 +23,41 @@ def home():
 
 
 # login
-@app.route("/login.html")
+# @app.route("/login.html", methods=["GET", "POST"])
+# def login():
+#     if request.method == "POST":
+#         username = request.form.get("username")
+#         password = request.form.get("password")
+#         with engine.connect() as conn:
+#             stmt = select(data)
+#             result = conn.execute(stmt)
+#             all_rows = result.fetchall()
+#             for row in all_rows:
+#                 if row.email == username and row.password == password and row.member_type == "student":
+#                     return redirect(url_for("dashboard"))
+#         # if username
+#     return render_template("login.html")
+@app.route("/login.html", methods=["GET", "POST"])
 def login():
-    return render_template("login.html")
+    if request.method == "POST":
+        username = request.form.get("username")
+        password = request.form.get("password")
 
+        with engine.connect() as conn:
+            stmt = select(data).where(
+                data.c.email == username,
+                data.c.password == password,
+                data.c.member_type == "student"
+            )
+
+            user = conn.execute(stmt).fetchone()
+
+            if user:
+                return redirect(url_for("dashboard"))
+
+        return "Invalid email or password"
+
+    return render_template("login.html")
 
 
 # dashboard
