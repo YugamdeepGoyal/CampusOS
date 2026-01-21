@@ -5,80 +5,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard | CampusOS</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); }
+    </style>
 </head>
-<body class="bg-slate-50 flex h-screen">
+<body class="bg-[#f8fafc] flex h-screen overflow-hidden">
 
-    <aside class="w-64 bg-white border-r border-slate-200 hidden md:flex flex-col">
-        <div class="p-6">
-            <div class="flex items-center gap-2 mb-10">
-                <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center font-bold text-white">C</div>
-                <span class="text-xl font-bold text-slate-900">CampusOS</span>
+    <aside class="w-72 bg-white border-r border-slate-200 hidden lg:flex flex-col">
+        <div class="p-8">
+            <div class="flex items-center gap-3 mb-10">
+                <div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-200">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                </div>
+                <span class="text-2xl font-extrabold text-slate-900 tracking-tight">CampusOS</span>
             </div>
-            <nav class="space-y-1">
-                <a href="#" class="flex items-center gap-3 px-4 py-3 bg-indigo-50 text-indigo-700 rounded-xl font-semibold">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+            
+            <nav class="space-y-2">
+                <a href="dashboard.html" class="flex items-center gap-3 px-4 py-3.5 bg-indigo-600 text-white rounded-2xl shadow-md shadow-indigo-100 font-bold transition-all">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
                     Dashboard
                 </a>
-                <a href="notices.html" class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-50 rounded-xl transition">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
+                <a href="notices.html" class="flex items-center gap-3 px-4 py-3.5 text-slate-500 hover:bg-slate-50 hover:text-indigo-600 rounded-2xl font-semibold transition-all group">
+                    <svg class="w-5 h-5 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
                     Notices
                 </a>
             </nav>
         </div>
-        <div class="mt-auto p-6 border-t border-slate-100 text-sm font-medium text-slate-500">
-            Student ID: 2024-UI-102
+        
+        <div class="mt-auto p-8">
+            <div class="bg-slate-900 rounded-3xl p-5 text-white relative overflow-hidden">
+                <p class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">Student ID</p>
+                <p class="text-lg font-mono">2024-UI-102</p>
+                <div class="absolute -right-4 -bottom-4 w-20 h-20 bg-indigo-500/20 rounded-full"></div>
+            </div>
         </div>
     </aside>
 
     <main class="flex-1 overflow-y-auto">
-        <header class="bg-white/80 backdrop-blur-md sticky top-0 z-10 p-6 border-b border-slate-200 flex justify-between items-center">
-            <h1 class="text-xl font-bold text-slate-900">Student Overview</h1>
+        <header class="glass sticky top-0 z-30 px-8 py-5 border-b border-slate-200 flex justify-between items-center">
+            <div>
+                <h1 class="text-2xl font-extrabold text-slate-900">Student Overview</h1>
+                <p class="text-sm text-slate-500 font-medium">Welcome back, Student Name 👋</p>
+            </div>
             <div class="flex items-center gap-4">
-                <div class="text-right hidden sm:block">
-                    <p class="text-sm font-bold text-slate-900">Student Name</p>
-                    <p class="text-xs text-slate-500">Computer Science - Year 3</p>
+                <button class="p-2 text-slate-400 hover:bg-slate-100 rounded-full transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                </button>
+                <div class="h-10 w-[1px] bg-slate-200 mx-2"></div>
+                <div class="flex items-center gap-3">
+                    <div class="text-right hidden sm:block">
+                        <p class="text-sm font-bold text-slate-900 leading-tight">Student Name</p>
+                        <p class="text-[11px] text-indigo-600 font-bold uppercase tracking-wide">CS - Year 3</p>
+                    </div>
+                    <div class="w-12 h-12 rounded-2xl bg-indigo-100 border-2 border-white shadow-sm ring-1 ring-slate-200 flex items-center justify-center font-bold text-indigo-600">SN</div>
                 </div>
-                <div class="w-10 h-10 rounded-full bg-slate-200 border border-slate-300"></div>
             </div>
         </header>
 
-        <div class="p-8 max-w-7xl mx-auto">
-            <div class="grid md:grid-cols-3 gap-6 mb-8">
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-                    <p class="text-slate-500 text-sm font-medium mb-1">Attendance</p>
-                    <h3 class="text-3xl font-bold text-indigo-600">88%</h3>
+        <div class="p-8 max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-6 mb-10">
+                <div class="bg-white p-6 rounded-[2rem] border border-slate-200 shadow-sm hover:shadow-xl hover:shadow-indigo-500/5 transition-all group">
+                    <div class="w-12 h-12 bg-indigo-50 rounded-2xl flex items-center justify-center text-indigo-600 mb-4 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                    </div>
+                    <p class="text-slate-500 text-sm font-bold mb-1 uppercase tracking-tight">Attendance</p>
+                    <h3 class="text-4xl font-extrabold text-slate-900">88%</h3>
                 </div>
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-                    <p class="text-slate-500 text-sm font-medium mb-1">Pending Assignments</p>
-                    <h3 class="text-3xl font-bold text-amber-600">04</h3>
+                <div class="bg-white p-6 rounded-[2rem] border border-slate-200 shadow-sm hover:shadow-xl hover:shadow-amber-500/5 transition-all group">
+                    <div class="w-12 h-12 bg-amber-50 rounded-2xl flex items-center justify-center text-amber-600 mb-4 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <p class="text-slate-500 text-sm font-bold mb-1 uppercase tracking-tight">Pending Tasks</p>
+                    <h3 class="text-4xl font-extrabold text-slate-900">04</h3>
                 </div>
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-                    <p class="text-slate-500 text-sm font-medium mb-1">CGPA (Current)</p>
-                    <h3 class="text-3xl font-bold text-emerald-600">9.92</h3>
+                <div class="bg-white p-6 rounded-[2rem] border border-slate-200 shadow-sm hover:shadow-xl hover:shadow-emerald-500/5 transition-all group">
+                    <div class="w-12 h-12 bg-emerald-50 rounded-2xl flex items-center justify-center text-emerald-600 mb-4 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <p class="text-slate-500 text-sm font-bold mb-1 uppercase tracking-tight">CGPA</p>
+                    <h3 class="text-4xl font-extrabold text-slate-900">9.92</h3>
                 </div>
             </div>
 
-            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
-                <div class="p-6 border-b border-slate-100 flex justify-between items-center">
-                    <h2 class="font-bold text-slate-900 text-lg">Latest Notices</h2>
-                    <a href="notices.html" class="text-indigo-600 text-sm font-semibold">View All</a>
+            <div class="bg-white rounded-[2.5rem] border border-slate-200 shadow-sm overflow-hidden">
+                <div class="p-8 border-b border-slate-100 flex justify-between items-center">
+                    <div>
+                        <h2 class="font-extrabold text-slate-900 text-xl tracking-tight">Recent Announcements</h2>
+                        <p class="text-sm text-slate-500">Stay updated with the latest campus news</p>
+                    </div>
+                    <a href="notices.html" class="px-5 py-2.5 bg-slate-50 text-indigo-600 rounded-xl text-sm font-bold hover:bg-indigo-600 hover:text-white transition-all">View Bulletin</a>
                 </div>
                 <div class="divide-y divide-slate-100">
-                    <div class="p-6 flex gap-4 items-start hover:bg-slate-50">
-                        <div class="w-10 h-10 bg-indigo-100 rounded-full flex-shrink-0 flex items-center justify-center text-indigo-600 font-bold">!</div>
-                        <div>
-                            <h4 class="font-bold text-slate-900">Final Semester Exam Schedule Released</h4>
-                            <p class="text-slate-500 text-sm mt-1">Download the PDF to see your slot timings.</p>
-                            <span class="text-xs text-slate-400 mt-2 block">2 hours ago • Admin Office</span>
+                    <div class="p-8 flex gap-6 items-start hover:bg-slate-50/50 transition cursor-pointer">
+                        <div class="w-12 h-12 bg-indigo-100 rounded-2xl flex-shrink-0 flex items-center justify-center text-indigo-600">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                         </div>
-                    </div>
-                    <div class="p-6 flex gap-4 items-start hover:bg-slate-50">
-                        <div class="w-10 h-10 bg-emerald-100 rounded-full flex-shrink-0 flex items-center justify-center text-emerald-600 font-bold">✓</div>
-                        <div>
-                            <h4 class="font-bold text-slate-900">Hackathon Winners Announced</h4>
-                            <p class="text-slate-500 text-sm mt-1">Congratulations to the winners of Campus-Code 2024.</p>
-                            <span class="text-xs text-slate-400 mt-2 block">Yesterday • Tech Club</span>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-slate-900 text-lg mb-1">Final Semester Exam Schedule Released</h4>
+                            <p class="text-slate-500 leading-relaxed">Download the PDF to see your slot timings and hall assignments for June 2024.</p>
+                            <div class="flex items-center gap-4 mt-4">
+                                <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">2 Hours ago</span>
+                                <span class="w-1 h-1 bg-slate-300 rounded-full"></span>
+                                <span class="text-xs font-bold text-indigo-600 uppercase tracking-widest">Admin Office</span>
+                            </div>
                         </div>
                     </div>
                 </div>

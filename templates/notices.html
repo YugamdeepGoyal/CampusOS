@@ -5,61 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notices | CampusOS</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); }
+    </style>
 </head>
-<body class="bg-slate-50">
-    <div class="max-w-3xl mx-auto px-4 py-8">
-        <div class="flex justify-between items-center mb-8">
-            <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight">Notice Board</h1>
-            <a href="dashboard.html" class="bg-indigo-600 text-white px-5 py-2 rounded-xl font-bold hover:bg-indigo-700 transition">Back</a>
-        </div>
+<body class="bg-[#f8fafc] flex h-screen overflow-hidden">
 
-        <div class="flex gap-4 mb-8 overflow-x-auto pb-2">
-            <button class="px-4 py-2 bg-indigo-600 text-white rounded-full text-sm font-semibold whitespace-nowrap">All Notices</button>
-            <button class="px-4 py-2 bg-white border border-slate-200 text-slate-600 rounded-full text-sm font-semibold whitespace-nowrap">Academic</button>
-            <button class="px-4 py-2 bg-white border border-slate-200 text-slate-600 rounded-full text-sm font-semibold whitespace-nowrap">Events</button>
-            <button class="px-4 py-2 bg-white border border-slate-200 text-slate-600 rounded-full text-sm font-semibold whitespace-nowrap">Exams</button>
+    <aside class="w-72 bg-white border-r border-slate-200 hidden lg:flex flex-col">
+        <div class="p-8">
+            <div class="flex items-center gap-3 mb-10">
+                <div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-200">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                </div>
+                <span class="text-2xl font-extrabold text-slate-900 tracking-tight">CampusOS</span>
+            </div>
+            <nav class="space-y-2">
+                <a href="dashboard.html" class="flex items-center gap-3 px-4 py-3.5 text-slate-500 hover:bg-slate-50 hover:text-indigo-600 rounded-2xl font-semibold transition-all group">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+                    Dashboard
+                </a>
+                <a href="notices.html" class="flex items-center gap-3 px-4 py-3.5 bg-indigo-600 text-white rounded-2xl shadow-md shadow-indigo-100 font-bold transition-all">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
+                    Notices
+                </a>
+            </nav>
         </div>
+        <div class="mt-auto p-8">
+            <div class="bg-slate-900 rounded-3xl p-5 text-white relative overflow-hidden">
+                <p class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">Student ID</p>
+                <p class="text-lg font-mono">2024-UI-102</p>
+                <div class="absolute -right-4 -bottom-4 w-20 h-20 bg-indigo-500/20 rounded-full"></div>
+            </div>
+        </div>
+    </aside>
 
-        <div class="space-y-6">
-            <article class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="w-10 h-10 bg-slate-100 rounded-full"></div>
-                    <div>
-                        <p class="font-bold text-slate-900">Prof. Sarah Miller</p>
-                        <p class="text-xs text-slate-500">Dept. of Computer Science • 10:30 AM</p>
+    <main class="flex-1 overflow-y-auto">
+        <header class="glass sticky top-0 z-30 px-8 py-5 border-b border-slate-200 flex justify-between items-center">
+            <h1 class="text-2xl font-extrabold text-slate-900 tracking-tight">Notice Board</h1>
+            <div class="flex items-center gap-4">
+                <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Active Notifications: 12</span>
+            </div>
+        </header>
+
+        <div class="p-8 max-w-4xl mx-auto">
+            <div class="flex gap-3 mb-10 overflow-x-auto pb-4 no-scrollbar">
+                <button class="px-6 py-2.5 bg-slate-900 text-white rounded-2xl text-sm font-bold whitespace-nowrap shadow-lg shadow-slate-200">All Notices</button>
+                <button class="px-6 py-2.5 bg-white border border-slate-200 text-slate-600 rounded-2xl text-sm font-bold whitespace-nowrap hover:bg-indigo-50 hover:text-indigo-600 transition">Academic</button>
+                <button class="px-6 py-2.5 bg-white border border-slate-200 text-slate-600 rounded-2xl text-sm font-bold whitespace-nowrap hover:bg-emerald-50 hover:text-emerald-600 transition">Events</button>
+                <button class="px-6 py-2.5 bg-white border border-slate-200 text-slate-600 rounded-2xl text-sm font-bold whitespace-nowrap hover:bg-amber-50 hover:text-amber-600 transition">Exams</button>
+            </div>
+
+            <div class="space-y-8">
+                <article class="group bg-white p-8 rounded-[2.5rem] border border-slate-200 shadow-sm hover:shadow-2xl hover:shadow-indigo-500/5 transition-all">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-indigo-50 rounded-2xl flex items-center justify-center font-bold text-indigo-600">SM</div>
+                        <div>
+                            <p class="font-bold text-slate-900 leading-tight">Prof. Sarah Miller</p>
+                            <p class="text-xs text-slate-400 font-bold uppercase tracking-wider">Dept. of Computer Science • 10:30 AM</p>
+                        </div>
+                        <span class="ml-auto bg-indigo-50 text-indigo-600 text-[10px] font-extrabold px-3 py-1.5 rounded-full uppercase tracking-widest">Academic</span>
                     </div>
-                    <span class="ml-auto bg-indigo-100 text-indigo-700 text-[10px] font-bold px-2 py-1 rounded uppercase">Academic</span>
-                </div>
-                <h2 class="text-xl font-bold text-slate-900 mb-2">CS301 Lab Rescheduled</h2>
-                <p class="text-slate-600 leading-relaxed mb-4">
-                    The Afternoon session for CS301 (Data Structures) lab has been moved from Lab 4 to the Seminar Hall due to maintenance.
-                </p>
-                <div class="pt-4 border-t border-slate-50 flex gap-4">
-                    <button class="text-sm font-bold text-indigo-600">Acknowledge</button>
-                    <button class="text-sm font-bold text-slate-400">Save for Later</button>
-                </div>
-            </article>
-
-            <article class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="w-10 h-10 bg-slate-100 rounded-full"></div>
-                    <div>
-                        <p class="font-bold text-slate-900">Campus Events Team</p>
-                        <p class="text-xs text-slate-500">Admin Block • Yesterday</p>
+                    <h2 class="text-2xl font-extrabold text-slate-900 mb-3 group-hover:text-indigo-600 transition-colors">CS301 Lab Rescheduled</h2>
+                    <p class="text-slate-500 leading-relaxed mb-8 text-lg">
+                        The Afternoon session for CS301 (Data Structures) lab has been moved from Lab 4 to the Seminar Hall due to maintenance.
+                    </p>
+                    <div class="flex gap-3">
+                        <button class="flex-1 py-4 bg-indigo-600 text-white rounded-2xl font-bold hover:bg-indigo-700 transition shadow-lg shadow-indigo-100">Acknowledge</button>
+                        <button class="px-6 py-4 bg-slate-50 text-slate-400 rounded-2xl font-bold hover:bg-slate-100 transition">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path></svg>
+                        </button>
                     </div>
-                    <span class="ml-auto bg-emerald-100 text-emerald-700 text-[10px] font-bold px-2 py-1 rounded uppercase">Events</span>
-                </div>
-                <h2 class="text-xl font-bold text-slate-900 mb-2">Annual Sports Meet 2024</h2>
-                <div class="w-full h-48 bg-slate-200 rounded-xl mb-4 overflow-hidden flex items-center justify-center text-slate-400">
-                    [Event Poster Placeholder]
-                </div>
-                <p class="text-slate-600 mb-4">Registration for individual and team sports is now open on the portal.</p>
-                <button class="w-full bg-slate-50 text-slate-900 font-bold py-3 rounded-xl border border-slate-100 hover:bg-slate-100 transition">
-                    Register Now
-                </button>
-            </article>
+                </article>
+
+                <article class="bg-white p-8 rounded-[2.5rem] border border-slate-200 shadow-sm">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-emerald-50 rounded-2xl flex items-center justify-center font-bold text-emerald-600">ET</div>
+                        <div>
+                            <p class="font-bold text-slate-900 leading-tight">Campus Events Team</p>
+                            <p class="text-xs text-slate-400 font-bold uppercase tracking-wider">Admin Block • Yesterday</p>
+                        </div>
+                        <span class="ml-auto bg-emerald-50 text-emerald-600 text-[10px] font-extrabold px-3 py-1.5 rounded-full uppercase tracking-widest">Events</span>
+                    </div>
+                    <h2 class="text-2xl font-extrabold text-slate-900 mb-4">Annual Sports Meet 2024</h2>
+                    <div class="w-full h-64 bg-slate-100 rounded-[2rem] mb-6 overflow-hidden flex flex-col items-center justify-center text-slate-400 border-2 border-dashed border-slate-200">
+                        <svg class="w-12 h-12 mb-2 opacity-20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        <p class="font-bold text-sm uppercase tracking-widest opacity-30">Event Poster</p>
+                    </div>
+                    <p class="text-slate-500 mb-8 text-lg leading-relaxed">Registration for individual and team sports is now open on the portal. Late entries will not be entertained.</p>
+                    <button class="w-full bg-slate-900 text-white font-extrabold py-4 rounded-2xl hover:bg-black transition-all shadow-xl shadow-slate-200">
+                        Register Now
+                    </button>
+                </article>
+            </div>
         </div>
-    </div>
+    </main>
 </body>
 </html>

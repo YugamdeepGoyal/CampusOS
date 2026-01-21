@@ -37,7 +37,6 @@ def login():
                     return redirect(url_for("dashboard"))
                 else:
                     return "INVALID"
-        # if username
     return render_template("login.html")
 
 
