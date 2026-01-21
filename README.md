@@ -63,6 +63,9 @@ CampusOS/
     └── ... (other html files)
 ```
 USE:<br>
+This fake data for student login<br>
 email: abcd_1@gmail.com<br>
 password: abcd_1_1<br>
-For Sample Login
+This fake data for faculty login<br>
+username: efgh_11@gmail.com<br>
+password: efgh_11_1
