@@ -34,8 +34,47 @@ College students face "Information Overload." **CampusOS** segments data so that
 
 ---
 
+
+
+
+
+---
+
+## 🧰 Tech Stack
+
+- **Backend:** Python, Flask  
+- **Database:** SQLite  
+- **ORM:** SQLAlchemy  
+- **Frontend:** HTML, Tailwind CSS, JavaScript  
+- **Templating Engine:** Jinja2  
+- **Version Control:** Git & GitHub  
+
+---
+
+## ⚙️ Installation & Setup
+
+Follow these steps to run the project locally:
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/CampusOS.git
+cd CampusOS
+
+# Create virtual environment (recommended)
+python -m venv venv
+venv\Scripts\activate        # Windows
+# source venv/bin/activate  # macOS/Linux
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the Flask app
+python app.py
+```
+
+
 ## 📂 Project Structure & Navigation
-#### The project is in development phase so you need to enter the url to visit the pages. Also every content on the website is completely fake.
+#### The project is in development phase so you might need to enter the url to visit the pages but constant improvement is being done. Also every content on the website is completely fake.
 To view specific pages, start the Flask server and enter these URLs:
 
 | Page Name | Flask Route (URL) | Description |
