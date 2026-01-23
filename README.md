@@ -7,7 +7,7 @@ CampusOS is a modern, unified web platform designed to eliminate the fragmentati
 ---
 
 ## 🏗️ Project Status: UNDER CONSTRUCTION
-This project is currently being developed for a hackathon. 
+This project is currently being developed for a hackathon. This is just a frontend prototype not a working website. Backend connected is just for the login purpose in the prototype. 
 > [!IMPORTANT]
 > Some interactive elements (buttons/links) are currently placeholders. To view the UI, you must run the Flask server and navigate to the routes manually.
 
